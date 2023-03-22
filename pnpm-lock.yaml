@@ -14,9 +14,13 @@ specifiers:
   publint: ^0.1.9
   svelte: ^3.54.0
   svelte-check: ^3.0.1
+  svelte-inview: ^4.0.0
   tslib: ^2.4.1
   typescript: ^5.0.0
   vite: ^4.2.0
+
+dependencies:
+  svelte-inview: 4.0.0_svelte@3.57.0
 
 devDependencies:
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.13.0
@@ -1671,6 +1675,14 @@ packages:
       svelte: 3.57.0
     dev: true
 
+  /svelte-inview/4.0.0_svelte@3.57.0:
+    resolution: {integrity: sha512-2lvfkJRkmHt19RvDe5MrIK/pFiPJhyXbKL6JrEyRNC73EYTmFSMBc7481UIw01s5+/+uRQXRPvrtC0zA45HLaA==}
+    peerDependencies:
+      svelte: ^3.0.0
+    dependencies:
+      svelte: 3.57.0
+    dev: false
+
   /svelte-preprocess/5.0.3_wkdgp32a7s6524odeddpfzb52q:
     resolution: {integrity: sha512-GrHF1rusdJVbOZOwgPWtpqmaexkydznKzy5qIC2FabgpFyKN57bjMUUUqPRfbBXK5igiEWn1uO/DXsa2vJ5VHA==}
     engines: {node: '>= 14.10.0'}
@@ -1721,7 +1733,6 @@ packages:
   /svelte/3.57.0:
     resolution: {integrity: sha512-WMXEvF+RtAaclw0t3bPDTUe19pplMlfyKDsixbHQYgCWi9+O9VN0kXU1OppzrB9gPAvz4NALuoca2LfW2bOjTQ==}
     engines: {node: '>= 8'}
-    dev: true
 
   /svelte2tsx/0.6.10_bar3e6maa3kocq65ftghewjow4:
     resolution: {integrity: sha512-7CtUexhSHppSpLwVX7yI9OxJp7+esCNTuOF/CaVxWTgWp88QF/2/dCbpND/cTZmBxht5cFFQBwoLXXqFLdYe3Q==}

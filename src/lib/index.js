@@ -1,2 +1,1 @@
-export { default as Reveal } from './Reveal/Reveal.svelte';
-export { reveal } from './Reveal/reveal';
+export { default as Reveal } from './Reveal.svelte';
