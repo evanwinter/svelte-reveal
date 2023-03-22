@@ -1,46 +1,82 @@
-# create-svelte
+# svelte-reveal
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Simple, spring-based reveal animations for Svelte components.
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+This package has two exports:
 
-## Developing
+1. `<Reveal />`: A Svelte component that reveals itself.
+2. `use:reveal`: A Svelte action that reveals the DOM element it's attached to.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Usage
 
-```bash
-npm run dev
+### Using `<Reveal />`
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+---
+
+| key       | description                                | default value | values                                |
+| --------- | ------------------------------------------ | ------------- | ------------------------------------- |
+| direction | the direction the element moves            | `"up"`        | `"up"`, `"down"`, `"left"`, `"right"` |
+| delay     | number of milliseconds to delay the reveal | `0`           | `number`                              |
+| distance  | number of pixels the element moves         | `32`          | `number`                              |
+
+---
+
+Direction
+
+```svelte
+<Reveal direction="up">
+	<p>Anim et laborum sit incididunt sit nostrud.</p>
+</Reveal>
+<Reveal direction="down">
+	<p>Anim et laborum sit incididunt sit nostrud.</p>
+</Reveal>
+<Reveal direction="left">
+	<p>Anim et laborum sit incididunt sit nostrud.</p>
+</Reveal>
+<Reveal direction="right">
+	<p>Anim et laborum sit incididunt sit nostrud.</p>
+</Reveal>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+---
 
-## Building
+Delay
 
-To build your library:
-
-```bash
-npm run package
+```svelte
+<Reveal delay={300}>
+	<p>Anim et laborum sit incididunt sit nostrud.</p>
+</Reveal>
 ```
 
-To create a production version of your showcase app:
+Use `delay` to stagger multiple items.
 
-```bash
-npm run build
+```svelte
+{#each things as thing, i}
+	<Reveal delay={i * 50}>
+		<p>{thing.text}</p>
+	</Reveal>
+{/each}
 ```
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Distance
 
-## Publishing
+```svelte
+<Reveal distance={100}>
+	<p>Anim et laborum sit incididunt sit nostrud.</p>
+</Reveal>
+```
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+### Using `use:reveal`
 
-To publish your library to [npm](https://www.npmjs.com):
+```
+<div use:reveal />
 
-```bash
-npm publish
+<div use:reveal={{
+  x: 48,
+  stiffness: 0.05,
+  damping: 0.6,
+  delay: 300
+}}>
 ```
