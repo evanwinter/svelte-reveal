@@ -4,18 +4,6 @@
 	const items = Array.from({ length: 1_000 }, (_, i) => i);
 </script>
 
-<nav style="display:flex;justify-content:flex-end;gap:1rem;">
-	<Reveal direction="right" delay={200}>
-		<a href="#">Home</a>
-	</Reveal>
-	<Reveal direction="right" delay={150}>
-		<a href="#">About</a>
-	</Reveal>
-	<Reveal direction="right" delay={100}>
-		<a href="#">Contact</a>
-	</Reveal>
-</nav>
-
 <section>
 	{#each items as item}
 		<Reveal direction="up" distance={100} delay={(item * 50) % 3}>
