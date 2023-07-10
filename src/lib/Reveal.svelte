@@ -16,8 +16,11 @@
 	}[direction];
 
 	const progress = spring(0, { stiffness, damping });
+
 	if (eager) {
-		progress.set(1);
+		setTimeout(() => {
+			progress.set(1);
+		}, delay);
 	}
 </script>
 

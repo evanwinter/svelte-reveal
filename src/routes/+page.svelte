@@ -6,7 +6,7 @@
 
 <section>
 	{#each items as item}
-		<Reveal direction="up" distance={100} delay={(item * 50) % 3}>
+		<Reveal eager={true} direction="up" distance={100} delay={(item * 50) % 3}>
 			<div class="item" />
 		</Reveal>
 	{/each}
