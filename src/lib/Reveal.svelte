@@ -6,6 +6,7 @@
 	export let delay: number = 0;
 	export let stiffness: number = 0.05;
 	export let damping: number = 0.5;
+	export let eager: boolean = false;
 
 	const options = {
 		right: { x: -1 * distance, y: 0 },
@@ -15,6 +16,9 @@
 	}[direction];
 
 	const progress = spring(0, { stiffness, damping });
+	if (eager) {
+		progress.set(1);
+	}
 </script>
 
 <div
